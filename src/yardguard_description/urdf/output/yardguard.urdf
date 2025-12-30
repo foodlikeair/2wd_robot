@@ -4,30 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="yardguard">
-  <!-- <gazebo reference="caster_wheel_link">
-        <mu1 value="0.1" />
-        <mu2 value="0.1" />
-    </gazebo> -->
-  <gazebo>
-    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
-      <left_joint>back_left_wheel_joint</left_joint>
-      <right_joint>back_right_wheel_joint</right_joint>
-      <left_joint>front_left_wheel_joint</left_joint>
-      <right_joint>front_right_wheel_joint</right_joint>
-      <wheel_separation>0.45</wheel_separation>
-      <wheel_radius>0.1</wheel_radius>
-      <frame_id>odom</frame_id>
-      <child_frame_id>base_footprint</child_frame_id>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-      <joint_name>back_left_wheel_joint</joint_name>
-      <joint_name>back_right_wheel_joint</joint_name>
-      <joint_name>front_left_wheel_joint</joint_name>
-      <joint_name>front_right_wheel_joint</joint_name>
-    </plugin>
-  </gazebo>
   <material name="blue">
     <color rgba="0 0 0.5 1"/>
   </material>
@@ -39,7 +15,7 @@
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin rpy="0 0 0" xyz="0 0 0.137"/>
+    <origin rpy="0 0 0" xyz="0 0 0.135"/>
   </joint>
   <!-- base_link and base_scan (required for Nav2) -->
   <link name="base_link">
@@ -181,4 +157,28 @@
       <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
     </inertial>
   </link>
+  <!-- <gazebo reference="caster_wheel_link">
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+    </gazebo> -->
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>back_left_wheel_joint</left_joint>
+      <right_joint>back_right_wheel_joint</right_joint>
+      <left_joint>front_left_wheel_joint</left_joint>
+      <right_joint>front_right_wheel_joint</right_joint>
+      <wheel_separation>0.45</wheel_separation>
+      <wheel_radius>0.1</wheel_radius>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <joint_name>back_left_wheel_joint</joint_name>
+      <joint_name>back_right_wheel_joint</joint_name>
+      <joint_name>front_left_wheel_joint</joint_name>
+      <joint_name>front_right_wheel_joint</joint_name>
+    </plugin>
+  </gazebo>
 </robot>

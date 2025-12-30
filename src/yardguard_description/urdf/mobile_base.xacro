@@ -12,7 +12,7 @@
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin rpy="0 0 0" xyz="0 0 ${wheel_radius + 0.037}"/>
+    <origin rpy="0 0 0" xyz="0 0 ${wheel_radius + 0.035}"/>
   </joint>
   <!-- base_link and base_scan (required for Nav2) -->
   <link name="base_link">
