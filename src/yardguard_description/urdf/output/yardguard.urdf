@@ -24,6 +24,12 @@
       <joint_name>back_right_wheel_joint</joint_name>
     </plugin>
   </gazebo>
+  <material name="blue">
+    <color rgba="0 0 0.5 1"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
   <!-- base_footprint (projection of base_link on the ground) -->
   <link name="base_footprint"/>
   <joint name="base_joint" type="fixed">
@@ -40,6 +46,17 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="blue"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.288 0.24 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    </collision>
+    <inertial>
+      <mass value="5.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+      <inertia ixx="0.028166666666666666" ixy="0" ixz="0" iyy="0.038726666666666666" iyz="0" izz="0.05856"/>
+    </inertial>
   </link>
   <joint name="base_scan_joint" type="fixed">
     <parent link="base_link"/>
@@ -70,6 +87,17 @@
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
+    </inertial>
   </link>
   <joint name="back_right_wheel_joint" type="continuous">
     <parent link="base_link"/>
@@ -85,6 +113,17 @@
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
+    </inertial>
   </link>
   <joint name="front_right_wheel_joint" type="continuous">
     <parent link="base_link"/>
@@ -100,6 +139,17 @@
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
+    </inertial>
   </link>
   <joint name="front_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
@@ -115,5 +165,16 @@
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
+    </inertial>
   </link>
 </robot>
