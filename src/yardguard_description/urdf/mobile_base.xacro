@@ -32,7 +32,7 @@
     <xacro:box_inertia m="5.0" x="${base_length}" y="${base_width}" z="${base_height}"
                            o_xyz="0 0 ${base_height / 2.0}" o_rpy="0 0 0" />
   </link>
-  <joint name="base_scan_joint" type="fixed">
+  <!-- <joint name="base_scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
     <origin rpy="0 0 0" xyz="-0.043199999999999995 0 0.075"/>
@@ -45,7 +45,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
-  </link>
+  </link> -->
   <!-- Wheels (2 differential wheels + 1 caster wheel to keep the balance) -->
   <joint name="back_left_wheel_joint" type="continuous">
     <parent link="base_link"/>

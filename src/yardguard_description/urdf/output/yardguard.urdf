@@ -38,7 +38,7 @@
       <inertia ixx="0.033375" ixy="0" ixz="0" iyy="0.043934999999999995" iyz="0" izz="0.05856"/>
     </inertial>
   </link>
-  <joint name="base_scan_joint" type="fixed">
+  <!-- <joint name="base_scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
     <origin rpy="0 0 0" xyz="-0.043199999999999995 0 0.075"/>
@@ -51,7 +51,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="grey"/>
     </visual>
-  </link>
+  </link> -->
   <!-- Wheels (2 differential wheels + 1 caster wheel to keep the balance) -->
   <joint name="back_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
@@ -235,6 +235,67 @@
       <update_rate>20</update_rate>
       <visualize>true</visualize>
       <topic>camera/image_raw</topic>
+    </sensor>
+  </gazebo>
+  <!-- Lidar Link Definition -->
+  <link name="lidar_link">
+    <visual>
+      <geometry>
+        <!-- Example dimensions for a common Lidar -->
+        <cylinder length="0.04" radius="0.05"/>
+      </geometry>
+      <!-- Position the visual relative to the link's origin -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <!-- <material name="black"/> -->
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.04" radius="0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <!-- Define inertial properties (simplified example) -->
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <!-- Lidar Joint Definition -->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <!-- Position the lidar on top of the parent link (adjust xyz values as needed) -->
+    <origin rpy="0 0 0" xyz="0.1 0 0.2"/>
+  </joint>
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="gpu_lidar">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <pose>-0.064 0 0.121 0 0 0</pose>
+      <update_rate>1</update_rate>
+      <topic>scan</topic>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>1</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>0.0</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </lidar>
     </sensor>
   </gazebo>
 </robot>

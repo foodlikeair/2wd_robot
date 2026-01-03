@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="www.ros.org">
+
+  <!-- Define the parent link for the lidar (e.g., base_link or chassis_link) -->
+  <xacro:property name="parent_link_name" value="base_link" />
+
+  <!-- Lidar Link Definition -->
+  <link name="lidar_link">
+      <visual>
+          <geometry>
+              <!-- Example dimensions for a common Lidar -->
+              <cylinder radius="0.05" length="0.04"/>
+          </geometry>
+          <!-- Position the visual relative to the link's origin -->
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <!-- <material name="black"/> -->
+      </visual>
+      <collision>
+          <geometry>
+              <cylinder radius="0.05" length="0.04"/>
+          </geometry>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+      <!-- Define inertial properties (simplified example) -->
+      <inertial>
+          <mass value="0.1"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+      </inertial>
+  </link>
+
+  <!-- Lidar Joint Definition -->
+  <joint name="lidar_joint" type="fixed">
+      <parent link="${parent_link_name}"/>
+      <child link="lidar_link"/>
+      <!-- Position the lidar on top of the parent link (adjust xyz values as needed) -->
+      <origin xyz="0.1 0 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <gazebo reference="lidar_link">
+      <sensor name="lidar" type="gpu_lidar">
+          <always_on>true</always_on>
+          <visualize>true</visualize>
+          <pose>-0.064 0 0.121 0 0 0</pose>
+          <update_rate>1</update_rate>
+          <topic>scan</topic>
+          <lidar>
+              <scan>
+                  <horizontal>
+                      <samples>720</samples>
+                      <resolution>1</resolution>
+                      <min_angle>-3.14</min_angle>
+                      <max_angle>3.14</max_angle>
+                  </horizontal>
+                  <vertical>
+                      <samples>1</samples>
+                      <resolution>1</resolution>
+                      <min_angle>0.0</min_angle>
+                      <max_angle>0.0</max_angle>
+                  </vertical>
+              </scan>
+              <range>
+                  <min>0.1</min>
+                  <max>10.0</max>
+                  <resolution>0.01</resolution>
+              </range>
+          </lidar>
+      </sensor>
+  </gazebo>
+
+</robot>
