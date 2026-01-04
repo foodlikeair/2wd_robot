@@ -20,6 +20,10 @@ Control programatically
 ros2 topic pub -r 1 /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.5}}"
 ros2 topic pub -r 1 /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.0}}"
 ```
+Start SLAM
+```
+ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
+```
 
 ### Add camera sensor
 1. Add xacro file for camera definition
