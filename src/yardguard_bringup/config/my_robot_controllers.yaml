@@ -1,0 +1,6 @@
+# TODO: finish copying the config for this file. Start ros2_control lecture section 10 at 17:30
+controller_manager:
+  ros2__parameters:
+    update_rate: 50
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
