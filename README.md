@@ -34,6 +34,7 @@ ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
 ### Good sources for how to link laser/scan
 https://github.com/ROBOTIS-GIT/turtlebot3_simulations/blob/9be186fb03d84ed4f293e5c0db71d8c05bbc91f3/turtlebot3_gazebo/params/turtlebot3_waffle_bridge.yaml#L3
 https://github.com/turtlebot/turtlebot4/blob/jazzy/turtlebot4_description/urdf/sensors/rplidar.urdf.xacro
+https://github.com/turtlebot/turtlebot4/blob/jazzy/turtlebot4_description/urdf/sensors/rplidar.urdf.xacro
 
 ### Launch yardguard with SLAM
 Run all commands in order in their own respective terminal windows
@@ -41,6 +42,7 @@ Run all commands in order in their own respective terminal windows
 2. ```ros2 run teleop_twist_keyboard teleop_twist_keyboard```
 3. ```ros2 launch nav2_bringup navigation_launch.py```
 4. ```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
+
 
 ### To save a generated map
 ```ros2 run nav2_map_server map_saver_cli -f /home/daniel/Desktop/maps/mymap```
