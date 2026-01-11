@@ -42,3 +42,11 @@ Run all commands in order in their own respective terminal windows
 3. ```ros2 launch nav2_bringup navigation_launch.py```
 4. ```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
 
+### To save a generated map
+```ros2 run nav2_map_server map_saver_cli -f /home/daniel/Desktop/maps/mymap```
+
+
+### Todos
+1. Generate a map and save it
+2. Load the generated map and use it in conjunction with laser scanner
+
