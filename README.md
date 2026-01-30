@@ -49,3 +49,13 @@ Run all commands in order in their own respective terminal windows
 ### Launch yardguard with mock motors
 1. ```ros2 launch yardguard_bringup mock_motor.launch.xml```
 2. ``` ros2 run teleop_twist_keyboard  teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_drive_controller/cmd_vel -p stamped:=true ```
+
+### Useful resources
+How to connect odrive micros to everything
+https://docs.odriverobotics.com/v/latest/guides/arduino-can-guide.html
+https://www.youtube.com/watch?v=BqNmjZ8Cibc
+https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduino/11910 
+
+
+
+
