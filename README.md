@@ -59,3 +59,11 @@ https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduin
 
 
 
+### To save a generated map
+```ros2 run nav2_map_server map_saver_cli -f /home/daniel/Desktop/maps/mymap```
+
+
+### Todos
+1. Generate a map and save it
+2. Load the generated map and use it in conjunction with laser scanner
+
