@@ -36,12 +36,27 @@ https://github.com/ROBOTIS-GIT/turtlebot3_simulations/blob/9be186fb03d84ed4f293e
 https://github.com/turtlebot/turtlebot4/blob/jazzy/turtlebot4_description/urdf/sensors/rplidar.urdf.xacro
 https://github.com/turtlebot/turtlebot4/blob/jazzy/turtlebot4_description/urdf/sensors/rplidar.urdf.xacro
 
+### Generate frames
+```ros2 run tf2_tools view_frames```
+
 ### Launch yardguard with SLAM
 Run all commands in order in their own respective terminal windows
 1. ```bash build.sh; bash bringup.sh;```
 2. ```ros2 run teleop_twist_keyboard teleop_twist_keyboard```
 3. ```ros2 launch nav2_bringup navigation_launch.py```
 4. ```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
+
+### Launch yardguard with mock motors
+1. ```ros2 launch yardguard_bringup mock_motor.launch.xml```
+2. ``` ros2 run teleop_twist_keyboard  teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_drive_controller/cmd_vel -p stamped:=true ```
+
+### Useful resources
+How to connect odrive micros to everything
+https://docs.odriverobotics.com/v/latest/guides/arduino-can-guide.html
+https://www.youtube.com/watch?v=BqNmjZ8Cibc
+https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduino/11910 
+
+
 
 
 ### To save a generated map
