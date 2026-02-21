@@ -12,8 +12,6 @@
             name="gz::sim::systems::DiffDrive">
             <left_joint>back_left_wheel_joint</left_joint>
             <right_joint>back_right_wheel_joint</right_joint>
-            <left_joint>front_left_wheel_joint</left_joint>
-            <right_joint>front_right_wheel_joint</right_joint>
             <wheel_separation>0.45</wheel_separation>
             <wheel_radius>0.1</wheel_radius>
             <frame_id>odom</frame_id>
@@ -27,8 +25,6 @@
             name="gz::sim::systems::JointStatePublisher">
             <joint_name>back_left_wheel_joint</joint_name>
             <joint_name>back_right_wheel_joint</joint_name>
-            <joint_name>front_left_wheel_joint</joint_name>
-            <joint_name>front_right_wheel_joint</joint_name>
         </plugin>
     </gazebo>
 
