@@ -10,8 +10,8 @@ controller_manager:
 
 diff_drive_controller:
   ros__parameters:
-    left_wheel_names: ["back_left_wheel_joint"]
-    right_wheel_names: ["back_right_wheel_joint"]
+    left_wheel_names: ["back_left_wheel_joint", "front_left_wheel_joint"]
+    right_wheel_names: ["back_right_wheel_joint", "front_right_wheel_joint"]
     
     #The space between the opposing wheels, or the width of the base + wheel width, check this
     wheel_separation: 0.29

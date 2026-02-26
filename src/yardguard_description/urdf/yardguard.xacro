@@ -2,14 +2,11 @@
 
 <robot name="yardguard" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:arg name="prefix" default="back" />
-  <xacro:arg name="use_mock_hardware" default="false" />
   <xacro:include filename="common_properties.xacro" />
-  <xacro:include filename="diffbot.ros2_control.xacro" />
+  <xacro:include filename="mobile_base_gazebo.xacro" />
   <xacro:include filename="camera.xacro" />
   <xacro:include filename="lidar.xacro" />
+  <xacro:include filename="mobile_base.ros2_control.xacro" />
   <xacro:include filename="mobile_base.xacro" />
-  <xacro:diffbot_ros2_control
-    name="DiffBot" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
 
 </robot>
