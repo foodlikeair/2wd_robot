@@ -10,26 +10,6 @@
   <material name="grey">
     <color rgba="0.5 0.5 0.5 1"/>
   </material>
-  <!-- <gazebo reference="caster_wheel_link">
-        <mu1 value="0.1" />
-        <mu2 value="0.1" />
-    </gazebo> -->
-  <gazebo>
-    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
-      <left_joint>back_left_wheel_joint</left_joint>
-      <right_joint>back_right_wheel_joint</right_joint>
-      <wheel_separation>0.45</wheel_separation>
-      <wheel_radius>0.1</wheel_radius>
-      <frame_id>odom</frame_id>
-      <child_frame_id>base_footprint</child_frame_id>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-      <joint_name>back_left_wheel_joint</joint_name>
-      <joint_name>back_right_wheel_joint</joint_name>
-    </plugin>
-  </gazebo>
   <link name="camera_link">
     <visual>
       <geometry>
@@ -148,22 +128,6 @@
       </lidar>
     </sensor>
   </gazebo>
-  <ros2_control name="MobileBaseHardwareInterface" type="system">
-    <hardware>
-      <plugin>mock_components/GenericSystem</plugin>
-      <param name="calculate_dynamics">true</param>
-    </hardware>
-    <joint name="back_left_wheel_joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="back_right_wheel_joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  </ros2_control>
   <!-- base_footprint (projection of base_link on the ground) -->
   <link name="base_footprint"/>
   <joint name="base_joint" type="fixed">
@@ -259,7 +223,7 @@
       <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
     </inertial>
   </link>
-  <joint name="front_right_wheel_joint" type="fixed">
+  <joint name="front_right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="front_right_wheel"/>
     <origin rpy="0 0 0" xyz="0.13 -0.155 -0.045"/>
@@ -285,7 +249,7 @@
       <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
     </inertial>
   </link>
-  <joint name="front_left_wheel_joint" type="fixed">
+  <joint name="front_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="front_left_wheel"/>
     <origin rpy="0 0 0" xyz="0.13 0.155 -0.045"/>
@@ -311,4 +275,16 @@
       <inertia ixx="0.002708333333333334" ixy="0" ixz="0" iyy="0.002708333333333334" iyz="0" izz="0.005000000000000001"/>
     </inertial>
   </link>
+  <ros2_control name="DiffBot" type="system">
+    <hardware>
+      <plugin>odrive_ros2_control_plugin/ODriveHardwareInterface</plugin>
+      <param name="can">can0</param>
+    </hardware>
+    <joint name="back_left_wheel_joint">
+      <param name="node_id">0</param>
+    </joint>
+    <joint name="back_right_wheel_joint">
+      <param name="node_id">1</param>
+    </joint>
+  </ros2_control>
 </robot>

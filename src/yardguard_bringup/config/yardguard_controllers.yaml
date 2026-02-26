@@ -26,7 +26,7 @@ diff_drive_controller:
     enable_odom_tf: true
     publish_rate: 50.0
 
-    linear.x.max_velocity: 1.0
-    linear.x.min_velocity: -1.0
-    angular.z.max_velocity: 1.0
-    angular.z.min_velocity: -1.0
+    linear.x.max_velocity: 10.0
+    linear.x.min_velocity: -10.0
+    angular.z.max_velocity: 10.0
+    angular.z.min_velocity: -10.0

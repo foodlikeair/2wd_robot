@@ -69,7 +69,8 @@ https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduin
 
 ## When starting hardware for botwheel explorer.
 1. Make sure power is plugged in first, then plug usb
-2. For CAN, run: `sudo ip link set can0 up type can bitrate 250000` if connection is not happening.
-3. Run `ros2 launch odrive_botwheel_explorer botwheel_explorer.launch.py`
-4. Run: `ros2 run teleop_twist_keyboard  teleop_twist_keyboard --ros-args -r /cmd_vel:=/botwheel_explorer/cmd_vel -p stamped:=true`
+`sudo ip link set can0 up type can bitrate 250000`
+`bash build.sh`
+`ros2 launch odrive_botwheel_explorer botwheel_explorer.launch.py`
+`ros2 run teleop_twist_keyboard  teleop_twist_keyboard --ros-args -r /cmd_vel:=/botwheel_explorer/cmd_vel -p stamped:=true`
 
