@@ -22,6 +22,7 @@ ros2 topic pub -r 1 /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular
 ```
 Start SLAM
 ```
+```
 ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
 ```
 
@@ -43,8 +44,11 @@ https://github.com/turtlebot/turtlebot4/blob/jazzy/turtlebot4_description/urdf/s
 Run all commands in order in their own respective terminal windows
 1. ```bash build.sh; bash bringup.sh;```
 2. ```ros2 run teleop_twist_keyboard teleop_twist_keyboard```
-3. ```ros2 launch nav2_bringup navigation_launch.py```
-4. ```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
+3. ```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
+4. ```ros2 launch nav2_bringup navigation_launch.py```
+
+
+Alternate step 4: `ros2 launch nav2_bringup navigation_launch.py map:=/home/daniel/Desktop/map.yaml`
 
 ### Launch yardguard with mock motors
 1. ```ros2 launch yardguard_bringup mock_motor.launch.xml```
@@ -59,10 +63,6 @@ https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduin
 
 
 
-### To save a generated map
-```ros2 run nav2_map_server map_saver_cli -f /home/daniel/Desktop/maps/mymap```
-
-
 ### Todos
 1. Generate a map and save it
 2. Load the generated map and use it in conjunction with laser scanner
@@ -74,3 +74,7 @@ https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduin
 `ros2 launch yardguard_bringup botwheel_explorer.launch.py`
 `ros2 run teleop_twist_keyboard  teleop_twist_keyboard --ros-args -r /cmd_vel:=/botwheel_explorer/cmd_vel -p stamped:=true`
 
+### How to save a map
+After generating the map save it to a location with this command
+
+`ros2 run nav2_map_server map_saver_cli -f /path/to/map`
