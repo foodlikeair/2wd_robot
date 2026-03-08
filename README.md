@@ -51,8 +51,11 @@ Run all commands in order in their own respective terminal windows
 ```ros2 launch nav2_bringup navigation_launch.py```
 
 
-## Load map use case: 
+## Load map use case:
+```bash build.sh; bash bringup.sh;```
+```ros2 run teleop_twist_keyboard teleop_twist_keyboard```
 `ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true map:=/home/daniel/Desktop/map.yaml`
+```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
 `ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=/home/daniel/Desktop/map.yaml`
 `ros2 run nav2_util lifecycle_bringup map_server`
 
