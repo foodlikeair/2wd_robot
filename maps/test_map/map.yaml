@@ -1,0 +1,7 @@
+image: /home/daniel/projects/foodlikeair/2wd_robot/maps/test_map/map.pgm
+mode: trinary
+resolution: 0.050
+origin: [-12.243, -15.161, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
