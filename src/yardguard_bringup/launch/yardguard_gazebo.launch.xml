@@ -25,8 +25,8 @@
         <param name="config_file" value="$(var gazebo_config_path)" />
     </node>
 
-    <node pkg="rviz2" exec="rviz2" output="screen" 
-          args="-d $(var rviz_config_path)" />
+    <!-- <node pkg="rviz2" exec="rviz2" output="screen" 
+          args="-d $(var rviz_config_path)" /> -->
 
     <!-- <node 
         pkg="tf2_ros" 

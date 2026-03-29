@@ -1,0 +1,8 @@
+# map_server_params.yaml
+map_server:
+  ros__parameters:
+    yaml_filename: "/home/daniel/projects/foodlikeair/2wd_robot/maps/test_map/map.yaml"
+    # Optional parameters (e.g., frame_id, topic, use_sim_time)
+    frame_id: map
+    topic: map
+    use_sim_time: true

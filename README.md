@@ -58,6 +58,7 @@ Run all commands in order in their own respective terminal windows
 ```ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true```
 `ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=/home/daniel/Desktop/map.yaml`
 `ros2 run nav2_util lifecycle_bringup map_server`
+Use the `start_map_usecase_terminal.sh` file. Also you need to set 2d pose estimate, to get it working in rviz.
 
 ### Launch yardguard with mock motors
 1. ```ros2 launch yardguard_bringup mock_motor.launch.xml```
