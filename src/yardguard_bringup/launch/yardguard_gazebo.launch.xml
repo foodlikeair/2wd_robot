@@ -18,8 +18,8 @@
         <!-- <arg name="gz_args" value="empty.sdf -r" /> -->
         <arg name="gz_args" value="$(find-pkg-share yardguard_bringup)/worlds/dpt1.sdf -r" />
     </include>
-<!-- 
-    <node pkg="controller_manager" exec="ros2_control_node">
+
+    <!-- <node pkg="controller_manager" exec="ros2_control_node">
         <param from="$(find-pkg-share yardguard_bringup)/config/yardguard_controllers.yaml" />
     </node> -->
 
@@ -37,5 +37,5 @@
         pkg="tf2_ros" 
         exec="static_transform_publisher" 
         name="scan_to_map" 
-        args="0.288 0.24 0.15 0 0 0 map base_link" />
+        args="0.288 0.24 0.15 0 0 0 map odom" />
 </launch>
