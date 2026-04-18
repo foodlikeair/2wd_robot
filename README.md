@@ -70,6 +70,13 @@ https://docs.odriverobotics.com/v/latest/guides/arduino-can-guide.html
 https://www.youtube.com/watch?v=BqNmjZ8Cibc
 https://discourse.odriverobotics.com/t/can-communication-on-odrives-using-arduino/11910 
 
+## How to connect camera
+Install usb-cam: https://index.ros.org/p/usb_cam/
+Run `ros2 run usb_cam usb_cam_node_exe --ros-args --params-file /home/daniel/projects/foodlikeair/2wd_robot/src/yardguard_bringup/config/camera_config.yaml`
+
+Setup rviz create image subscription to /image_raw
+
+
 
 
 
