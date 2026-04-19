@@ -76,6 +76,11 @@ Run `ros2 run usb_cam usb_cam_node_exe --ros-args --params-file /home/daniel/pro
 
 Setup rviz create image subscription to /image_raw
 
+## How to connect lidar
+https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2#Instructions
+
+
+
 
 
 
